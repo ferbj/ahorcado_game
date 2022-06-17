@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col text-center">
+        <img class="rounded mx-auto d-block ahorcado-img" src="/assets/img/{{attempts}}.png">
+        <h3>Intentos <small>{{attempts}} / 9</small></h3>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col text-center">
+        <h1>{{hideword}}</h1>
+    </div>
+
+</div>
+
+<div class="row" *ngIf="win">
+    <div class="col text-center">
+        <h1>Felicidades Ganaste!</h1>
+        <h4><i class="fa fa-smile-o"></i></h4>
+    </div>
+
+</div>
+<div class="row" *ngIf="lost">
+    <div class="col text-center">
+        <h1>Lo siento, perdiste</h1>
+        <h4><i class="fa fa-frown-o"></i> {{ word }}</h4>
+    </div>
+
+</div>
+<div class="row" *ngIf="!win && !lost">
+    <div class="col text-center">
+        <button (click)="testword( letter )" *ngFor="let letter of words" class="btn btn-primary ml-1 mt-1">{{letter}}</button>
+
+    </div>
+
+</div>
